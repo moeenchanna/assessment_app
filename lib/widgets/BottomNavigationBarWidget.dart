@@ -20,8 +20,8 @@ class BottomNavigationBarWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildNavItem(Icons.saved_search_sharp, 0, provider),
-          _buildNavItem(Icons.chat_bubble, 1, provider),
-          _buildNavItem(Icons.home, 2, provider),
+          _buildNavItem(Icons.chat, 1, provider),
+          _buildNavItem(Icons.home_filled, 2, provider),
           _buildNavItem(Icons.favorite, 3, provider),
           _buildNavItem(Icons.person, 4, provider),
         ],
