@@ -1,4 +1,9 @@
 # This is a generated file; do not edit or check into version control.
+flutter_plugin_android_lifecycle=/Users/moeenchanna/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.21/
+google_maps_flutter=/Users/moeenchanna/.pub-cache/hosted/pub.dev/google_maps_flutter-2.7.1/
+google_maps_flutter_android=/Users/moeenchanna/.pub-cache/hosted/pub.dev/google_maps_flutter_android-2.12.2/
+google_maps_flutter_ios=/Users/moeenchanna/.pub-cache/hosted/pub.dev/google_maps_flutter_ios-2.10.0/
+google_maps_flutter_web=/Users/moeenchanna/.pub-cache/hosted/pub.dev/google_maps_flutter_web-0.5.9+2/
 path_provider=/Users/moeenchanna/.pub-cache/hosted/pub.dev/path_provider-2.1.4/
 path_provider_android=/Users/moeenchanna/.pub-cache/hosted/pub.dev/path_provider_android-2.2.9/
 path_provider_foundation=/Users/moeenchanna/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.0/

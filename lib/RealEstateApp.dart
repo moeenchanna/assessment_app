@@ -12,8 +12,6 @@ class RealEstateApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Consumer<BottomNavigationProvider>(
       builder: (context, provider, child) {
         // Update the System UI overlay style based on the selected index
@@ -35,12 +33,18 @@ class RealEstateApp extends StatelessWidget {
               backgroundColor: provider.selectedIndex == 2
                   ? ColorUtils.transparent
                   : ColorUtils.blackColor,
-              body: SafeArea(
-                child: _buildBody(provider.selectedIndex),
-              ),
-              bottomNavigationBar: const Padding(
-                padding: EdgeInsets.only(bottom: 30, left: 40, right: 40),
-                child: BottomNavigationBarAnimatedWidget(),
+              body: Stack(
+                children: [
+                  SafeArea(
+                    child: _buildBody(provider.selectedIndex),
+                  ),
+                  const Positioned(
+                    bottom: 20,
+                    left: 40,
+                    right: 40,
+                    child: BottomNavigationBarAnimatedWidget(),
+                  ),
+                ],
               ),
             ),
           ),
@@ -56,7 +60,7 @@ class RealEstateApp extends StatelessWidget {
       case 1:
       case 3:
       case 4:
-        return  Container(); // Return an empty container or a placeholder widget
+        return Container(); // Return an empty container or a placeholder widget
       case 2:
         return const HomeScreen();
       default:
