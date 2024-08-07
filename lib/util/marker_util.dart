@@ -20,7 +20,7 @@ class MarkerUtil {
     const basePadding = 10.0;
 
     final width = baseWidth * scale;
-    final height = baseHeight; // Keep height constant
+    const height = baseHeight; // Keep height constant
     final padding = basePadding * scale;
 
     canvas.drawRRect(

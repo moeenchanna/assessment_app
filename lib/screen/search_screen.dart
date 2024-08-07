@@ -1,9 +1,7 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:real_estate_app_ui/widgets/widgets.dart';
-
 import '../providers/provider.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -143,7 +141,7 @@ class SearchScreenState extends State<SearchScreen>
           body: Stack(
             children: [
               const MapWidget(),
-              const SearchBar(),
+              const SearchBarWidget(),
               MapBottomLeftButtonsWidget(
                   sendButtonKey: _sendButtonKey, showMenu: _showMenu),
               const MapBottomRightButtonsWidget(),

@@ -8,6 +8,7 @@ export 'greeting_widget.dart';
 export 'offer_widget.dart';
 export 'property_tile_widget.dart';
 export 'map_widget.dart';
+export 'search_bar_widget.dart';
 export 'popup_menu_widget.dart';
 export 'map_bottom_left_buttons_widget.dart';
 export 'map_bottom_right_buttons_widget.dart';
