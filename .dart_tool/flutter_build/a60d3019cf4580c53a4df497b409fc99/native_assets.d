@@ -1,0 +1,1 @@
+ /Users/moeenchanna/Desktop/Android\ Apps/real_estate_app_ui/.dart_tool/flutter_build/a60d3019cf4580c53a4df497b409fc99/native_assets.yaml: 

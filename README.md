@@ -4,7 +4,7 @@
 
 This project is a Flutter-based mobile application for a real estate platform, developed as part of a technical assessment. The app showcases modern UI design implementation, state management using Provider, and adherence to clean architecture principles.
 
-![App Screenshot](https://cdn.dribbble.com/userupload/13098663/file/original-1edfb55ba7fba0334e532f095eb22da5.png?resize=1600x1200)
+![App Screenshot](https://cdn.dribbble.com/userupload/13450596/file/original-7a43c751ab3b3c9e93ccb1558c3813ce.png?resize=2048x1536&vertical=center)
 
 [View Original Design](https://dribbble.com/shots/23780608-Real-Estate-App)
 
