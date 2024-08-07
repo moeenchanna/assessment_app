@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:provider/provider.dart';
 import 'package:real_estate_app_ui/util/utils.dart';
+import 'package:animated_digit/animated_digit.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -135,15 +137,20 @@ class HomeScreen extends StatelessWidget {
                                         style: TextStyle(color: ColorUtils.whiteColor),
                                       ),
                                       const Spacer(),
-                                      Text(
-                                        provider.buyOffers,
-                                        style: const TextStyle(
+                                      AnimatedDigitWidget(
+                                        value: provider.buyOffers,
+                                        textStyle: const TextStyle(
                                           color: ColorUtils.whiteColor,
                                           fontSize: 32,
-                                          // Increase the size
-                                          fontWeight: FontWeight.bold, // Make it bold
+                                          fontWeight: FontWeight.bold,
                                         ),
+                                        fractionDigits: 0,
+                                        enableSeparator: true,
+                                        separateSymbol: " ",
+                                        // decimalSeparator: ",",
+                                        duration: const Duration(seconds: 1),
                                       ),
+
                                       const SizedBox(height: 8),
                                       const Text(
                                         'offers',
@@ -176,15 +183,20 @@ class HomeScreen extends StatelessWidget {
                                         style: TextStyle(color: ColorUtils.brownColor),
                                       ),
                                       const Spacer(),
-                                      Text(
-                                        provider.rentOffers,
-                                        style: const TextStyle(
+                                      AnimatedDigitWidget(
+                                        value: provider.rentOffers,
+                                        textStyle: const TextStyle(
                                           color: ColorUtils.brownColor,
                                           fontSize: 32,
-                                          // Increase the size
-                                          fontWeight: FontWeight.bold, // Make it bold
+                                          fontWeight: FontWeight.bold,
                                         ),
+                                        fractionDigits: 0,
+                                        enableSeparator: true,
+                                        separateSymbol: " ",
+                                        // decimalSeparator: ",",
+                                        duration: const Duration(seconds: 1),
                                       ),
+
                                       const SizedBox(height: 8),
                                       const Text(
                                         'offers',
@@ -322,8 +334,8 @@ class PropertyTile extends StatelessWidget {
 }
 
 class HomeProvider with ChangeNotifier {
-  String buyOffers = "1 034";
-  String rentOffers = "2 212";
+  int buyOffers = 1034;
+  int rentOffers = 2212;
   List<Property> properties = [
     Property(
       address: 'Gladkova St., 25',
@@ -336,21 +348,11 @@ class HomeProvider with ChangeNotifier {
           'https://i.pinimg.com/originals/1b/e6/b9/1be6b9c2434f0d2951316407829b98fc.jpg',
     ),
     Property(
-      address: 'Example St., 10',
-      imageUrl:
-          'https://i.pinimg.com/originals/2d/00/ef/2d00ef3f0334071a7207dc4969017c6d.png',
-    ),
-
-    Property(
       address: 'Gladkova St., 25',
       imageUrl:
       'https://images.livspace-cdn.com/plain/https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/sites/2/2022/09/20124936/Cover-3.jpg',
     ),
-    // Property(
-    //   address: 'Gladkova St., 25',
-    //   imageUrl:
-    //       'https://i.pinimg.com/originals/d1/83/1f/d1831fd4cdefc09d35f439eb4e217249.jpg',
-    // ),
+
   ];
 
   Map<String, bool> slideCompleted = {};
