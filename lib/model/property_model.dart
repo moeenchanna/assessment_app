@@ -1,6 +1,6 @@
-class Property {
+class PropertyModel {
   final String address;
   final String imageUrl;
 
-  Property({required this.address, required this.imageUrl});
+  PropertyModel({required this.address, required this.imageUrl});
 }

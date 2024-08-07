@@ -11,6 +11,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<HomeProvider>(context);
+    final buyOffer = provider.getOfferByType(AppStrings.buyText);
+    final rentOffer = provider.getOfferByType(AppStrings.rentText);
 
     return SafeArea(
       child: Scaffold(
@@ -31,22 +33,21 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Expanded(
                             child: OfferWidget(
-                              offerType: 'BUY',
-                              offerCount: provider.buyOffers,
+                              offerType: AppStrings.buyText,
+                              offerCount: buyOffer.count,
                               color: ColorUtil.orangeColor,
                             ),
                           ),
-                          const SizedBox(width: 20), // Adjust this value to increase/decrease space between widgets
+                          const SizedBox(width: 10), // Adjust this value to increase/decrease space between widgets
                           Expanded(
                             child: OfferWidget(
-                              offerType: 'RENT',
-                              offerCount: provider.rentOffers,
+                              offerType: AppStrings.rentText,
+                              offerCount: rentOffer.count,
                               color: ColorUtil.whiteColor,
                               textColor: ColorUtil.brownColor,
                             ),
@@ -59,8 +60,8 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 1),
                       child: StaggeredGrid.count(
                         crossAxisCount: 4,
-                        mainAxisSpacing: 4,
-                        crossAxisSpacing: 4,
+                        mainAxisSpacing: 1,
+                        crossAxisSpacing: 1,
                         children:
                             List.generate(provider.properties.length, (index) {
                           final property = provider.properties[index];

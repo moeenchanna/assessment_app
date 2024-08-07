@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:animated_digit/animated_digit.dart';
-
 import '../util/utils.dart';
 
 class OfferWidget extends StatelessWidget {
@@ -10,23 +9,23 @@ class OfferWidget extends StatelessWidget {
   final Color textColor;
 
   const OfferWidget({
-    Key? key,
+    super.key,
     required this.offerType,
     required this.offerCount,
     required this.color,
     this.textColor = ColorUtil.whiteColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        width: 150,
-        height: 150,
+        width: 200,
+        height: 190,
         decoration: ShapeDecoration(
           color: color,
-          shape: offerType == 'BUY' ? const CircleBorder() : RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16.0),
+          shape: offerType == AppStrings.buyText ? const CircleBorder() : RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
           ),
         ),
         child: Center(
@@ -42,19 +41,21 @@ class OfferWidget extends StatelessWidget {
                 const Spacer(),
                 AnimatedDigitWidget(
                   value: offerCount,
+
                   textStyle: TextStyle(
                     color: textColor,
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
                   ),
+
                   fractionDigits: 0,
                   enableSeparator: true,
                   separateSymbol: " ",
-                  duration: const Duration(seconds: 1),
+                  duration: const Duration(seconds: 2),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'offers',
+                  AppStrings.offerText,
                   style: TextStyle(color: textColor),
                 ),
                 const Spacer(),

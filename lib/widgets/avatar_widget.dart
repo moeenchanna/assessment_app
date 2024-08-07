@@ -32,7 +32,8 @@ class AvatarWidget extends StatelessWidget {
         child: ClipOval(
           child: Padding(
             padding: imagePadding ?? EdgeInsets.all(size! * 0.1), // Default inner padding of 10% of size
-            child: FastCachedImage(
+            child:
+            FastCachedImage(
               url: imageUrl ?? NetworkImageUrls.defaultAvatar,
               fit: BoxFit.cover,
               fadeInDuration: const Duration(milliseconds: 300),

@@ -1,35 +1,38 @@
 import 'package:flutter/material.dart';
 import '../model/models.dart';
+import '../repository/repositories.dart';
 
 class HomeProvider with ChangeNotifier {
-  int buyOffers = 1034;
-  int rentOffers = 2212;
-  List<Property> properties = [
-    Property(
-      address: 'Gladkova St., 25',
-      imageUrl:
-      'https://images.livspace-cdn.com/plain/https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/sites/2/2022/09/20124936/Cover-3.jpg',
-    ),
-    Property(
-      address: 'Gladkova St., 25',
-      imageUrl:
-      'https://i.pinimg.com/originals/1b/e6/b9/1be6b9c2434f0d2951316407829b98fc.jpg',
-    ),
-    Property(
-      address: 'Gladkova St., 25',
-      imageUrl:
-      'https://images.livspace-cdn.com/plain/https://jumanji.livspace-cdn.com/magazine/wp-content/uploads/sites/2/2022/09/20124936/Cover-3.jpg',
-    ),
-  ];
+  final PropertyRepository _propertyRepository = PropertyRepository();
+  final OfferRepository _offerRepository = OfferRepository();
 
-  Map<String, bool> slideCompleted = {};
+  List<PropertyModel> _properties = [];
+  List<OfferModel> _offers = [];
+  final Map<String, bool> _slideCompleted = {};
+
+  List<PropertyModel> get properties => _properties;
+  List<OfferModel> get offers => _offers;
+
+  HomeProvider() {
+    _loadData();
+  }
+
+  void _loadData() {
+    _properties = _propertyRepository.getProperties();
+    _offers = _offerRepository.getOffers();
+    notifyListeners();
+  }
 
   void setSlideCompleted(String address) {
-    slideCompleted[address] = true;
+    _slideCompleted[address] = true;
     notifyListeners();
   }
 
   bool isSlideCompleted(String address) {
-    return slideCompleted[address] ?? false;
+    return _slideCompleted[address] ?? false;
+  }
+
+  OfferModel getOfferByType(String type) {
+    return _offers.firstWhere((offer) => offer.type == type);
   }
 }
