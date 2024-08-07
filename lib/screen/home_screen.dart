@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 20, right: 20),
+                      padding: const EdgeInsets.only(top: 10, right: 10),
                       child: Row(
                         children: [
                           Expanded(
@@ -294,7 +294,7 @@ class PropertyTile extends StatelessWidget {
                         property.address,
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: isFull ? 16.0 : 13.0,
+                          fontSize: isFull ? 16.0 : 12.0,
                           fontWeight: FontWeight.w400,
                           color: ColorUtils.blackColor,
                         ),

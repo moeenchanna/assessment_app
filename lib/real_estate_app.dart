@@ -40,8 +40,8 @@ class RealEstateApp extends StatelessWidget {
                   ),
                   const Positioned(
                     bottom: 20,
-                    left: 20,
-                    right: 20,
+                    left: 15,
+                    right: 15,
                     child: BottomNavigationBarAnimatedWidget(),
                   ),
                 ],
