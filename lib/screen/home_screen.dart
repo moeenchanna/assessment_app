@@ -108,124 +108,132 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 20, right: 20),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      width: 150,
-                      height: 150,
-                      decoration: const ShapeDecoration(
-                        color: ColorUtils.orangeColor,
-                        shape: CircleBorder(),
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'BUY',
-                                style: TextStyle(color: ColorUtils.whiteColor),
-                              ),
-                              const Spacer(),
-                              Text(
-                                provider.buyOffers,
-                                style: const TextStyle(
-                                  color: ColorUtils.whiteColor,
-                                  fontSize: 32,
-                                  // Increase the size
-                                  fontWeight: FontWeight.bold, // Make it bold
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              const Text(
-                                'offers',
-                                style: TextStyle(color: ColorUtils.whiteColor),
-                              ),
-                              const Spacer(),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      height: 150,
-                      decoration: ShapeDecoration(
-                        color: ColorUtils.whiteColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                      ),
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'RENT',
-                                style: TextStyle(color: ColorUtils.brownColor),
-                              ),
-                              const Spacer(),
-                              Text(
-                                provider.rentOffers,
-                                style: const TextStyle(
-                                  color: ColorUtils.brownColor,
-                                  fontSize: 32,
-                                  // Increase the size
-                                  fontWeight: FontWeight.bold, // Make it bold
-                                ),
-                              ),
-                              const SizedBox(height: 8),
-                              const Text(
-                                'offers',
-                                style: TextStyle(color: ColorUtils.brownColor),
-                              ),
-                              const Spacer(),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
             Expanded(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 1),
-                child: StaggeredGrid.count(
-                  crossAxisCount: 4,
-                  mainAxisSpacing: 4,
-                  crossAxisSpacing: 4,
-                  children: List.generate(provider.properties.length, (index) {
-                    final property = provider.properties[index];
-                    if (index % 4 == 0 || index % 4 == 3) {
-                      // Full-width item (first and fourth in each group of 4)
-                      return StaggeredGridTile.count(
-                        crossAxisCellCount: 4,
-                        mainAxisCellCount: 2,
-                        child: PropertyTile(property: property, isFull: true),
-                      );
-                    } else {
-                      // Half-width items (second and third in each group of 4)
-                      return StaggeredGridTile.count(
-                        crossAxisCellCount: 2,
-                        mainAxisCellCount: 2,
-                        child: PropertyTile(property: property, isFull: false),
-                      );
-                    }
-                  }),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20, right: 20),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                              width: 150,
+                              height: 150,
+                              decoration: const ShapeDecoration(
+                                color: ColorUtils.orangeColor,
+                                shape: CircleBorder(),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'BUY',
+                                        style: TextStyle(color: ColorUtils.whiteColor),
+                                      ),
+                                      const Spacer(),
+                                      Text(
+                                        provider.buyOffers,
+                                        style: const TextStyle(
+                                          color: ColorUtils.whiteColor,
+                                          fontSize: 32,
+                                          // Increase the size
+                                          fontWeight: FontWeight.bold, // Make it bold
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      const Text(
+                                        'offers',
+                                        style: TextStyle(color: ColorUtils.whiteColor),
+                                      ),
+                                      const Spacer(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Container(
+                              height: 150,
+                              decoration: ShapeDecoration(
+                                color: ColorUtils.whiteColor,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              ),
+                              child: Center(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      const Text(
+                                        'RENT',
+                                        style: TextStyle(color: ColorUtils.brownColor),
+                                      ),
+                                      const Spacer(),
+                                      Text(
+                                        provider.rentOffers,
+                                        style: const TextStyle(
+                                          color: ColorUtils.brownColor,
+                                          fontSize: 32,
+                                          // Increase the size
+                                          fontWeight: FontWeight.bold, // Make it bold
+                                        ),
+                                      ),
+                                      const SizedBox(height: 8),
+                                      const Text(
+                                        'offers',
+                                        style: TextStyle(color: ColorUtils.brownColor),
+                                      ),
+                                      const Spacer(),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 1),
+                      child: StaggeredGrid.count(
+                        crossAxisCount: 4,
+                        mainAxisSpacing: 4,
+                        crossAxisSpacing: 4,
+                        children: List.generate(provider.properties.length, (index) {
+                          final property = provider.properties[index];
+                          if (index % 4 == 0 || index % 4 == 3) {
+                            // Full-width item (first and fourth in each group of 4)
+                            return StaggeredGridTile.count(
+                              crossAxisCellCount: 4,
+                              mainAxisCellCount: 2,
+                              child: PropertyTile(property: property, isFull: true),
+                            );
+                          } else {
+                            // Half-width items (second and third in each group of 4)
+                            return StaggeredGridTile.count(
+                              crossAxisCellCount: 2,
+                              mainAxisCellCount: 2,
+                              child: PropertyTile(property: property, isFull: false),
+                            );
+                          }
+                        }),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
+            )
+            //Scroll
 
+            //Scroll
           ],
         ),
       ),
