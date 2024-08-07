@@ -6,7 +6,7 @@ import 'package:real_estate_app_ui/widgets/widgets.dart';
 import '../providers/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 20.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
                       child: Row(
                         children: [
                           Expanded(
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                               color: ColorUtil.orangeColor,
                             ),
                           ),
-                          const SizedBox(width: 10), // Adjust this value to increase/decrease space between widgets
+                          const SizedBox(width: 10),
                           Expanded(
                             child: OfferWidget(
                               offerType: AppStrings.rentText,
@@ -62,15 +62,13 @@ class HomeScreen extends StatelessWidget {
                         crossAxisCount: 4,
                         mainAxisSpacing: 1,
                         crossAxisSpacing: 1,
-                        children:
-                            List.generate(provider.properties.length, (index) {
+                        children: List.generate(provider.properties.length, (index) {
                           final property = provider.properties[index];
                           final isFull = index % 4 == 0 || index % 4 == 3;
                           return StaggeredGridTile.count(
                             crossAxisCellCount: isFull ? 4 : 2,
                             mainAxisCellCount: 2,
-                            child: PropertyTile(
-                                property: property, isFull: isFull),
+                            child: PropertyTile(property: property, isFull: isFull),
                           );
                         }),
                       ),

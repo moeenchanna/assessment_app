@@ -17,7 +17,7 @@ class MapBottomLeftButtonsWidget extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomLeft,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 130.0, left: 35),
+        padding: const EdgeInsets.only(bottom: 130.0, left: 20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

@@ -57,7 +57,7 @@ class RealEstateApp extends StatelessWidget {
 
     switch (selectedIndex) {
       case 0:
-        return const SearchScreen();
+        return const MapScreen();
       case 1:
       case 3:
       case 4:

@@ -11,7 +11,7 @@ class MapBottomRightButtonsWidget extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomRight,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 130.0, right: 35),
+        padding: const EdgeInsets.only(bottom: 130.0, right: 20),
         child: GlassMorphismWidget(
           text: AppStrings.variantText,
           icon: Icons.list,

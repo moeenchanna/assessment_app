@@ -4,14 +4,14 @@ import 'package:provider/provider.dart';
 import 'package:real_estate_app_ui/widgets/widgets.dart';
 import '../providers/provider.dart';
 
-class SearchScreen extends StatefulWidget {
-  const SearchScreen({super.key});
+class MapScreen extends StatefulWidget {
+  const MapScreen({super.key});
 
   @override
-  SearchScreenState createState() => SearchScreenState();
+  MapScreenState createState() => MapScreenState();
 }
 
-class SearchScreenState extends State<SearchScreen>
+class MapScreenState extends State<MapScreen>
     with TickerProviderStateMixin {
   late AnimationController _popupAnimationController;
   late Animation<double> _popupAnimation;

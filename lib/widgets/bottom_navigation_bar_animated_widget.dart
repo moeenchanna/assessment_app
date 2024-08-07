@@ -5,11 +5,11 @@ class BottomNavigationBarAnimatedWidget extends StatefulWidget {
   const BottomNavigationBarAnimatedWidget({super.key});
 
   @override
-  _BottomNavigationBarAnimatedState createState() =>
-      _BottomNavigationBarAnimatedState();
+  BottomNavigationBarAnimatedState createState() =>
+      BottomNavigationBarAnimatedState();
 }
 
-class _BottomNavigationBarAnimatedState
+class BottomNavigationBarAnimatedState
     extends State<BottomNavigationBarAnimatedWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
