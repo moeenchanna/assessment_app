@@ -44,14 +44,14 @@ class BottomNavigationBarWidget extends StatelessWidget {
         child: Ink(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isSelected ? ColorUtils.themeColor : ColorUtils.transparent,
+            color: isSelected ? ColorUtils.orangeColor : ColorUtils.transparent,
             shape: BoxShape.circle,
           ),
           child: Container(
             width: 38, // Fixed size for the circle
             height: 38, // Fixed size for the circle
             decoration: BoxDecoration(
-              color: isSelected ? ColorUtils.themeColor : ColorUtils.blackColor,
+              color: isSelected ? ColorUtils.orangeColor : ColorUtils.blackColor,
               shape: BoxShape.circle,
             ),
             child: Center(

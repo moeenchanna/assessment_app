@@ -162,7 +162,7 @@ class _SearchScreenState extends State<SearchScreen>
       String text, double widthFactor) async {
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder);
-    final paint = Paint()..color = ColorUtils.themeColor;
+    final paint = Paint()..color = ColorUtils.orangeColor;
     final textPainter = TextPainter(textDirection: TextDirection.ltr);
 
     final width = 200 * widthFactor;
@@ -207,7 +207,7 @@ class _SearchScreenState extends State<SearchScreen>
   Future<BitmapDescriptor> _createCustomIconBitmap() async {
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder);
-    final paint = Paint()..color = ColorUtils.themeColor;
+    final paint = Paint()..color = ColorUtils.orangeColor;
 
     const width = 90;
     const height = 100;
@@ -258,7 +258,7 @@ class _SearchScreenState extends State<SearchScreen>
         break;
       case 'price':
         icon = Icons.account_balance_wallet_outlined;
-        iconColor = ColorUtils.themeColor;
+        iconColor = ColorUtils.orangeColor;
         break;
       case 'infrastructure':
         icon = Icons.delete_outline;
@@ -289,7 +289,7 @@ class _SearchScreenState extends State<SearchScreen>
               text,
               style: TextStyle(
                 color: value == 'price'
-                    ? ColorUtils.themeColor
+                    ? ColorUtils.orangeColor
                     : ColorUtils.greyColor,
                 fontSize: 16,
                 fontWeight : FontWeight.w400,
@@ -382,111 +382,113 @@ class _SearchScreenState extends State<SearchScreen>
         _hideMenu();
         return true;
       },
-      child: Scaffold(
-        backgroundColor: Colors.black,
-        body: Stack(
-          children: [
-            GoogleMap(
-              onMapCreated: (GoogleMapController controller) {
-                _controller = controller;
-                if (_mapStyle != null) {
-                  _controller.setMapStyle(_mapStyle);
-                }
-              },
-              initialCameraPosition: _initialPosition,
-              markers: _markers,
-              myLocationEnabled: false,
-              trafficEnabled: false,
-              mapType: MapType.normal,
-              liteModeEnabled: true,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: ColorUtils.whiteColor,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: const Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8.0),
-                            child: Icon(Icons.search, color: Colors.grey),
-                          ),
-                          Expanded(
-                            child: TextField(
-                              enabled: false,
-                              decoration: InputDecoration(
-                                hintText: "Saint Petersburg",
-                                hintStyle: TextStyle(color: Colors.black),
-                                border: InputBorder.none,
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          body: Stack(
+            children: [
+              GoogleMap(
+                onMapCreated: (GoogleMapController controller) {
+                  _controller = controller;
+                  if (_mapStyle != null) {
+                    _controller.setMapStyle(_mapStyle);
+                  }
+                },
+                initialCameraPosition: _initialPosition,
+                markers: _markers,
+                myLocationEnabled: false,
+                trafficEnabled: false,
+                mapType: MapType.normal,
+                liteModeEnabled: true,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: ColorUtils.whiteColor,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: const Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Icon(Icons.search, color: Colors.grey),
+                            ),
+                            Expanded(
+                              child: TextField(
+                                enabled: false,
+                                decoration: InputDecoration(
+                                  hintText: "Saint Petersburg",
+                                  hintStyle: TextStyle(color: Colors.black),
+                                  border: InputBorder.none,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 20),
-                  Container(
-                    height: 50,
-                    width: 50,
-                    decoration: const BoxDecoration(
-                      color: ColorUtils.whiteColor,
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      icon: const Icon(Icons.tune, color: Colors.black),
-                      onPressed: () {
-// Add your onPressed code here!
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 130.0, left: 35),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-
-                    GlassMorphismWidget(
-                      icon: Icons.wallet,
-                      onPressed: () {
-// Add your onPressed code here!
-                      },
-                    ),
-                    const SizedBox(height: 10),
-                    GlassMorphismWidget(
-                      key: _sendButtonKey,
-                      icon: Icons.send,
-                      onPressed: _showMenu,
+                    const SizedBox(width: 20),
+                    Container(
+                      height: 50,
+                      width: 50,
+                      decoration: const BoxDecoration(
+                        color: ColorUtils.whiteColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        icon: const Icon(Icons.tune, color: Colors.black),
+                        onPressed: () {
+        // Add your onPressed code here!
+                        },
+                      ),
                     ),
                   ],
                 ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 130.0, right: 35),
-                child: GlassMorphismWidget(
-                  text: "List of variants",
-                  icon: Icons.list,
-                  onPressed: () {
-// Add your onPressed code here!
-                  },
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 130.0, left: 35),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+        
+                      GlassMorphismWidget(
+                        icon: Icons.wallet,
+                        onPressed: () {
+        // Add your onPressed code here!
+                        },
+                      ),
+                      const SizedBox(height: 10),
+                      GlassMorphismWidget(
+                        key: _sendButtonKey,
+                        icon: Icons.send,
+                        onPressed: _showMenu,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 130.0, right: 35),
+                  child: GlassMorphismWidget(
+                    text: "List of variants",
+                    icon: Icons.list,
+                    onPressed: () {
+        // Add your onPressed code here!
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
