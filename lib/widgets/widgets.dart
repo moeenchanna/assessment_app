@@ -2,3 +2,8 @@ export 'bottom_navigation_bar_widget.dart';
 export 'bottom_navigation_bar_animated_widget.dart';
 export 'gradient_background_widget.dart';
 export 'glass_morphism_widget.dart';
+export 'current_location_widget.dart';
+export 'avatar_widget.dart';
+export 'greeting_widget.dart';
+export 'offer_widget.dart';
+export 'property_tile_widget.dart';

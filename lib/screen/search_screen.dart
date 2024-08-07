@@ -162,7 +162,7 @@ class _SearchScreenState extends State<SearchScreen>
       String text, double widthFactor) async {
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder);
-    final paint = Paint()..color = ColorUtils.orangeColor;
+    final paint = Paint()..color = ColorUtil.orangeColor;
     final textPainter = TextPainter(textDirection: TextDirection.ltr);
 
     final width = 200 * widthFactor;
@@ -186,8 +186,8 @@ class _SearchScreenState extends State<SearchScreen>
         style: TextStyle(
           fontSize: 30,
           color: _textColorTransparent
-              ? ColorUtils.transparent
-              : ColorUtils.whiteColor,
+              ? ColorUtil.transparent
+              : ColorUtil.whiteColor,
           fontWeight: FontWeight.w600,
         ),
       );
@@ -207,7 +207,7 @@ class _SearchScreenState extends State<SearchScreen>
   Future<BitmapDescriptor> _createCustomIconBitmap() async {
     final recorder = ui.PictureRecorder();
     final canvas = Canvas(recorder);
-    final paint = Paint()..color = ColorUtils.orangeColor;
+    final paint = Paint()..color = ColorUtil.orangeColor;
 
     const width = 90;
     const height = 100;
@@ -231,7 +231,7 @@ class _SearchScreenState extends State<SearchScreen>
       style: TextStyle(
         fontSize: 50.0,
         fontFamily: icon.fontFamily,
-        color: ColorUtils.whiteColor,
+        color: ColorUtil.whiteColor,
       ),
     );
     textPainter.layout();
@@ -254,23 +254,23 @@ class _SearchScreenState extends State<SearchScreen>
     switch (value) {
       case 'cosy':
         icon = Icons.check_circle_outline;
-        iconColor = ColorUtils.greyColor;
+        iconColor = ColorUtil.greyColor;
         break;
       case 'price':
         icon = Icons.account_balance_wallet_outlined;
-        iconColor = ColorUtils.orangeColor;
+        iconColor = ColorUtil.orangeColor;
         break;
       case 'infrastructure':
         icon = Icons.delete_outline;
-        iconColor = ColorUtils.greyColor;
+        iconColor = ColorUtil.greyColor;
         break;
       case 'none':
         icon = Icons.layers;
-        iconColor = ColorUtils.greyColor;
+        iconColor = ColorUtil.greyColor;
         break;
       default:
         icon = Icons.error_outline;
-        iconColor = ColorUtils.greyColor;
+        iconColor = ColorUtil.greyColor;
     }
 
     return InkWell(
@@ -289,8 +289,8 @@ class _SearchScreenState extends State<SearchScreen>
               text,
               style: TextStyle(
                 color: value == 'price'
-                    ? ColorUtils.orangeColor
-                    : ColorUtils.greyColor,
+                    ? ColorUtil.orangeColor
+                    : ColorUtil.greyColor,
                 fontSize: 16,
                 fontWeight : FontWeight.w400,
               ),
@@ -409,7 +409,7 @@ class _SearchScreenState extends State<SearchScreen>
                       child: Container(
                         height: 50,
                         decoration: BoxDecoration(
-                          color: ColorUtils.whiteColor,
+                          color: ColorUtil.whiteColor,
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: const Row(
@@ -437,7 +437,7 @@ class _SearchScreenState extends State<SearchScreen>
                       height: 50,
                       width: 50,
                       decoration: const BoxDecoration(
-                        color: ColorUtils.whiteColor,
+                        color: ColorUtil.whiteColor,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(

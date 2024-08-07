@@ -14,7 +14,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: ColorUtils.navBackColor, // Coal black color
+        color: ColorUtil.navBackColor, // Coal black color
         borderRadius: BorderRadius.circular(40),
       ),
       child: Row(
@@ -44,20 +44,20 @@ class BottomNavigationBarWidget extends StatelessWidget {
         child: Ink(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isSelected ? ColorUtils.orangeColor : ColorUtils.transparent,
+            color: isSelected ? ColorUtil.orangeColor : ColorUtil.transparent,
             shape: BoxShape.circle,
           ),
           child: Container(
             width: 38, // Fixed size for the circle
             height: 38, // Fixed size for the circle
             decoration: BoxDecoration(
-              color: isSelected ? ColorUtils.orangeColor : ColorUtils.blackColor,
+              color: isSelected ? ColorUtil.orangeColor : ColorUtil.blackColor,
               shape: BoxShape.circle,
             ),
             child: Center(
               child: Icon(
                 icon,
-                color: ColorUtils.whiteColor,
+                color: ColorUtil.whiteColor,
                 size: 24,
               ),
             ),

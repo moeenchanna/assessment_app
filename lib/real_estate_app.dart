@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'providers/provider.dart';
 import 'screen/screens.dart';
-import 'util/color_utils.dart';
+import 'util/color_util.dart';
 import 'widgets/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,8 +17,8 @@ class RealEstateApp extends StatelessWidget {
         // Update the System UI overlay style based on the selected index
         SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
           statusBarColor: provider.selectedIndex == 2
-              ? ColorUtils.transparent
-              : ColorUtils.blackColor,
+              ? ColorUtil.transparent
+              : ColorUtil.blackColor,
           statusBarIconBrightness: provider.selectedIndex == 2
               ? Brightness.dark
               : Brightness.light,
@@ -31,8 +31,8 @@ class RealEstateApp extends StatelessWidget {
           home: GradientBackgroundWidget(
             child: Scaffold(
               backgroundColor: provider.selectedIndex == 2
-                  ? ColorUtils.transparent
-                  : ColorUtils.blackColor,
+                  ? ColorUtil.transparent
+                  : ColorUtil.blackColor,
               body: Stack(
                 children: [
                   SafeArea(

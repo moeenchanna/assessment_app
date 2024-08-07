@@ -1,12 +1,12 @@
+import 'package:fast_cached_network_image/fast_cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:real_estate_app_ui/screen/home_screen.dart';
-
 import 'providers/provider.dart';
 import 'real_estate_app.dart';
 
 
-void main() {
+Future<void> main() async {
+  await FastCachedImageConfig.init(clearCacheAfter: const Duration(days: 15));
   runApp(
     MultiProvider(
       providers: [
