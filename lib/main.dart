@@ -11,7 +11,10 @@ Future<void> main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => BottomNavigationProvider()),
+        ChangeNotifierProvider(create: (context) => MapProvider()),
         ChangeNotifierProvider(create: (context) => HomeProvider()),
+        ChangeNotifierProvider(create: (_) => MenuSelectionProvider()),
+
       ],
       child: const RealEstateApp(),
     ),
