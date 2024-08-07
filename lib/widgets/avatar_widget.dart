@@ -30,25 +30,21 @@ class AvatarWidget extends StatelessWidget {
           color: backgroundColor,
         ),
         child: ClipOval(
-          child: Padding(
-            padding: imagePadding ?? EdgeInsets.all(size! * 0.1), // Default inner padding of 10% of size
-            child:
-            FastCachedImage(
-              url: imageUrl ?? NetworkImageUrls.defaultAvatar,
-              fit: BoxFit.cover,
-              fadeInDuration: const Duration(milliseconds: 300),
-              errorBuilder: (context, exception, stacktrace) {
-                return Icon(Icons.person, size: size! * 0.5, color: ColorUtil.whiteColor);
-              },
-              loadingBuilder: (context, progress) {
-                return Center(
-                  child: CircularProgressIndicator(
-                    value: progress.progressPercentage.value,
-                    color: ColorUtil.whiteColor,
-                  ),
-                );
-              },
-            ),
+          child: FastCachedImage(
+            url: imageUrl ?? NetworkImageUrls.defaultAvatar,
+            fit: BoxFit.fill,
+            fadeInDuration: const Duration(milliseconds: 300),
+            errorBuilder: (context, exception, stacktrace) {
+              return Icon(Icons.person, size: size! * 0.5, color: ColorUtil.whiteColor);
+            },
+            loadingBuilder: (context, progress) {
+              return Center(
+                child: CircularProgressIndicator(
+                  value: progress.progressPercentage.value,
+                  color: ColorUtil.whiteColor,
+                ),
+              );
+            },
           ),
         ),
       ),

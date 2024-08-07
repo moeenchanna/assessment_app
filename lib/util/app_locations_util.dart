@@ -7,7 +7,7 @@ class AppLocationsUtil {
   // Initial map position
   static const CameraPosition initialPosition = CameraPosition(
     target: karachi,
-    zoom: 11,
+    zoom: 10,
   );
 
   // Other locations in Karachi
@@ -16,7 +16,7 @@ class AppLocationsUtil {
     LatLng(24.944417, 66.904901),
     LatLng(24.992041, 67.072544),
     LatLng(24.904143, 67.087658),
-    LatLng(24.843459, 67.072534),
+    LatLng(25.0651679,66.9510601),
   ];
 
   // Add more locations or regions as needed

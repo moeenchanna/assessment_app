@@ -16,8 +16,8 @@ class MarkerUtil {
     final textPainter = TextPainter(textDirection: TextDirection.ltr);
 
     const baseWidth = 200.0;
-    const baseHeight = 100.0;
-    const basePadding = 10.0;
+    const baseHeight = 90.0;
+    const basePadding = 5.0;
 
     final width = baseWidth * scale;
     const height = baseHeight; // Keep height constant
@@ -38,7 +38,7 @@ class MarkerUtil {
       textPainter.text = TextSpan(
         text: text,
         style: TextStyle(
-          fontSize: 30 * scale,
+          fontSize: 25 * scale,
           color: textColor,
           fontWeight: FontWeight.w600,
         ),
@@ -64,7 +64,7 @@ class MarkerUtil {
     final paint = Paint()..color = ColorUtil.orangeColor;
 
     const width = 90.0;
-    const height = 100.0;
+    const height = 90.0;
 
     canvas.drawRRect(
       RRect.fromRectAndCorners(

@@ -19,8 +19,10 @@ class MapWidget extends StatelessWidget {
       markers: mapProvider.markers,
       myLocationEnabled: false,
       trafficEnabled: false,
+      zoomGesturesEnabled: false,
+      zoomControlsEnabled: false,
       mapType: MapType.normal,
-      liteModeEnabled: true,
+      liteModeEnabled: false,
     );
   }
 }

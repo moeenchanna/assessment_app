@@ -31,7 +31,7 @@ class PropertyTile extends StatelessWidget {
               fit: BoxFit.cover,
               errorBuilder: (context, exception, stackTrace) {
                 return Container(
-                  color: ColorUtil.greyColor,
+                  color: ColorUtil.orangeColor,
                   child: const Icon(Icons.error, color: ColorUtil.orangeColor),
                 );
               },
@@ -41,6 +41,7 @@ class PropertyTile extends StatelessWidget {
                   child: Center(
                     child: CircularProgressIndicator(
                       value: progress.progressPercentage.value,
+                      color: ColorUtil.whiteColor,
                     ),
                   ),
                 );
