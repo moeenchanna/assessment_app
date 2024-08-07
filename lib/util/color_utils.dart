@@ -8,6 +8,7 @@ class ColorUtils {
   static const Color greyColor = Color(0xFF6E6E6E);
   static const Color orangeColor = Color(0xfff59206);
   static const Color brownColor = Color(0xFFA4957E);
+  static const Color liteBrownColor = Color(0xFFF1D8BE);
 
 
   static const Color primaryColor = Color(0xFF6200EE);

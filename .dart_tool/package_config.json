@@ -80,6 +80,12 @@
       "languageVersion": "3.4"
     },
     {
+      "name": "flutter_staggered_grid_view",
+      "rootUri": "file:///Users/moeenchanna/.pub-cache/hosted/pub.dev/flutter_staggered_grid_view-0.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/moeenchanna/Documents/FlutterDev/sdk/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -278,6 +284,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "slide_to_act",
+      "rootUri": "file:///Users/moeenchanna/.pub-cache/hosted/pub.dev/slide_to_act-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_span",
       "rootUri": "file:///Users/moeenchanna/.pub-cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
@@ -356,7 +368,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-08-05T19:08:39.192783Z",
+  "generated": "2024-08-07T05:52:37.785557Z",
   "generator": "pub",
   "generatorVersion": "3.5.0-323.2.beta",
   "flutterRoot": "file:///Users/moeenchanna/Documents/FlutterDev/sdk/flutter",
