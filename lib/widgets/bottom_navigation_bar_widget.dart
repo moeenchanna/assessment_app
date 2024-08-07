@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../providers/provider.dart';
 import '../util/utils.dart';
 
-
 class BottomNavigationBarWidget extends StatelessWidget {
   const BottomNavigationBarWidget({super.key});
 
@@ -37,7 +36,9 @@ class BottomNavigationBarWidget extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         customBorder: const CircleBorder(),
-        onTap: () => provider.updateIndex(index),
+        onTap: () {
+          provider.updateIndex(index);
+        },
         splashColor: Colors.white.withOpacity(0.3),
         highlightColor: Colors.white.withOpacity(0.5),
         child: Ink(
@@ -56,7 +57,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
             child: Center(
               child: Icon(
                 icon,
-                color: ColorUtils.whiteColor ,
+                color: ColorUtils.whiteColor,
                 size: 24,
               ),
             ),

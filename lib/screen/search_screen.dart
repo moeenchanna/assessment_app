@@ -4,7 +4,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
 
+import '../providers/provider.dart';
 import '../util/utils.dart';
 import '../widgets/widgets.dart';
 class SearchScreen extends StatefulWidget {
@@ -39,6 +41,7 @@ class _SearchScreenState extends State<SearchScreen>
   @override
   void initState() {
     super.initState();
+    Provider.of<BottomNavigationProvider>(context, listen: false).addListener(_hideMenu);
 
     // Initialize the main animation controller
     _animationController = AnimationController(
@@ -100,12 +103,15 @@ class _SearchScreenState extends State<SearchScreen>
 
   @override
   void dispose() {
+    Provider.of<BottomNavigationProvider>(context, listen: false).removeListener(_hideMenu);
+
     _hideMenu(); // Ensure the popup menu is hidden
     _animationController.dispose();
     _popupAnimationController.dispose();
     _controller.dispose();
     super.dispose();
   }
+
 
   Future<void> _loadMapStyle() async {
     _mapStyle = await DefaultAssetBundle.of(context)

@@ -54,6 +54,7 @@ class RealEstateApp extends StatelessWidget {
   }
 
   Widget _buildBody(int selectedIndex) {
+
     switch (selectedIndex) {
       case 0:
         return const SearchScreen();
@@ -67,4 +68,6 @@ class RealEstateApp extends StatelessWidget {
         return const Center(child: Text('Unknown Screen'));
     }
   }
+
+
 }

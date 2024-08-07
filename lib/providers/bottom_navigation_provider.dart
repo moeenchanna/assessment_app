@@ -9,4 +9,8 @@ class BottomNavigationProvider extends ChangeNotifier {
     _selectedIndex = index;
     notifyListeners();
   }
+
+  void notifyHideMenu() {
+    notifyListeners();
+  }
 }
